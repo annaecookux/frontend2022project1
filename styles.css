@@ -1,142 +1,193 @@
 /* ******* GLOBAL STYLES ******* */
 
-*, :after, :before {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  margin: 0;
 }
 
 /* ******* TYPE ******* */
 
-h1, h2, h3 {
-    color: #003F5C;
+h1,
+h2,
+h3 {
+  color: #003F5C;
+  margin-top: .5rem;
 }
 
-h2, h3 {
-    font-weight: 400;
+h2,
+h3 {
+  font-weight: 400;
 }
 
 h1 {
-    font-size: 3rem;
-    line-height: 125%;
+  font-size: 3rem;
+  line-height: 125%;
 }
 
 h2 {
-    font-size: 2.25rem;
-    line-height: 135%;
+  font-size: 2.25rem;
+  line-height: 135%;
 }
 
 h3 {
-    font-size: 1.75rem;
-    line-height: 135%;
+  font-size: 1.75rem;
+  line-height: 135%;
 }
 
-p, li {
-    color: #003F5C;
-    font-size: 1.125rem;
-    margin-top: .5em;
+p,
+li {
+  color: #003F5C;
+  font-size: 1.125rem;
+  margin-top: .5em;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
+footer li {
+  margin-top: 0em;
+  line-height: 2em;
+  justify-content: center;
+}
 
-  footer li {
-    margin-top: 0em;
-    line-height: 2em;
-    justify-content: center;
-  }
-  
 
 /* ******* LINKS ******* */
 
 a {
-    color: #217D91;
+  color: #217D91;
 }
 
-a:hover, a:focus {
-    color: #17647C;
-    outline: .125rem dashed #DD5182;
-    outline-offset: .063rem;
+a:hover,
+a:focus {
+  color: #17647C;
+  outline: .125rem dashed #DD5182;
+  outline-offset: .063rem;
 }
 
 a:active {
-    color: #0F526F;
+  color: #0F526F;
 }
 
 /* ******* SEMANTIC STYLES ******* */
 
-head, body {
+head,
+body {
   background: #F0F5F5;
   font-family: 'Inter', sans-serif;
 }
 
 main {
-    padding: 8.75rem;
-   }
+  padding: 2.75rem 20rem;
+}
 
 section {
-    margin-top: 5rem;
-  }
+  margin-top: 1rem;
+}
 
 footer {
-      display: flex;
-      justify-content: center;
-      border-top: solid;
-      border-width: .12rem;
-      border-color: #687176;
-      padding: 1rem 0 1rem 0;
-  } 
+  display: flex;
+  justify-content: center;
+  border-top: solid;
+  border-width: .12rem;
+  border-color: #687176;
+  padding: 1rem 0 1rem 0;
+}
 
+footer ul {
+  list-style: none;
+}
 
-  /* ******* IDS ******* */
+footer li {
+  text-align: center;
+}
 
-  #intro {
-    margin-bottom: 5rem;
-  }
+/* ******* Classes ******* */
 
-  #marginbelow48 {
-      margin-bottom: 3rem;
-  }
-    
+.sectionWrap {
+  margin: 2rem 0 2rem 0rem;
+}
+
+/* ******* IDs ******* */
+
+#wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#usPop {
+  border-style: solid;
+  border-color: #003F5C;
+  border-width: 2px;
+  margin-bottom: 2rem;
+}
+
+#usPopListSpacer {
+  margin-bottom: 2em;
+}
+
+#perAdults,
+#healthCompare {
+  margin-top: 2rem;
+  border-style: solid;
+  border-color: #003F5C;
+  border-width: 2px;
+  margin-bottom: 2rem;
+
+}
+
+#olderAdults,
+#womenAdults,
+#minorityAdults,
+#usualProvider,
+#unmetNeed,
+#routineCheckup {
+  margin-top: 2rem;
+  border-style: solid;
+  border-color: #003F5C;
+  border-width: 2px;
+}
+
 
 /* ******* MEDIA QUERIES ******* */
 
-/* Less than 900px */
-  @media all and (max-width: 900px) {
-    main {
-      padding: 1.5rem;
-      margin-bottom: 5rem;
-     }
+/* Less than 1400px */
+@media all and (max-width: 1400px) {
+  main {
+    padding: 2.75rem 10rem;
+    margin-bottom: 5rem;
+  }
 
- /* Less than 600px */
+/* Less than 900px */
+@media all and (max-width: 900px) {
+  main {
+    padding: 2.75rem 2rem;
+    margin-bottom: 5rem;
+  }
+
+  /* Less than 600px */
 
   @media all and (max-width: 600px) {
 
-  h1 {
+    h1 {
       font-size: 2.4rem;
-  }
+    }
 
-  h2 {
+    h2 {
       font-size: 1.8rem;
       line-height: 135%;
-  }
+    }
 
-  main {
-      padding: 1rem;
+    main {
+      padding: 2.75rem 2rem;
       margin: 3.75rem 0 3.75rem 0;
-     }
-    
+    }
+
   }
 
-/* Less than 375px */
+  /* Less than 375px */
   @media all and (max-width: 375px) {
     main {
-      padding: 1rem;
+      padding: 2.75rem 2rem;
       margin: 3rem 0 3rem 0;
-     }
+    }
 
   }
-

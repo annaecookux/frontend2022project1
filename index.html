@@ -1,32 +1,194 @@
 <!DOCTYPE html>
 <html lang="en-us">
-    <head>
-        <title>Project 1 - Anna E. Cook</title>
-        <meta charset="UTF-8"/>
-        <link rel="stylesheet" href="styles.css">
-        <script defer src="my-script.js"></script>
-        <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/maps/modules/map.js"></script>
-        <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');</style>
-    </head>
-    <body>
-<main>
-    <div id="intro">
+  <head>
+    <title>Project 1 - Anna E. Cook</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="styles.css"/>
+    <script defer src="my-script.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/map.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="wrapper">
         <h1>Disability Impacts All of Us</h1>
         <h2>61 million adults in the United States live with disability</h2>
-        <p>Data used from <a href="https://www.cdc.gov/ncbddd/disabilityandhealth/infographic-disability-impacts-all.html">Center for Disease Control (CDC) "Disability Impacts All of Us"</a>
+
+        <p>
+          Data used from
+          <a
+            href="https://www.cdc.gov/ncbddd/disabilityandhealth/infographic-disability-impacts-all.html"
+            >Center for Disease Control (CDC) "Disability Impacts All of Us"</a
+          >
         </p>
-    </div>
-    <section>
-        <h3 id="marginbelow48">US Population with Disabilities</h3>
-        <div id="usPop" style="width:100%; height:400px;"></div>
-        <div id="perAdults" style="width:100%; height:400px;"></div>
-</section>
-</main>
-<footer>
-    <ul>
-    <li>Data used from <a href="https://www.cdc.gov/ncbddd/disabilityandhealth/infographic-disability-impacts-all.html">Center for Disease Control (CDC) "Disability Impacts All of Us"</a></li>
-    <li>For more information go to <a href="https://www.cdc.gov/ncbddd/disabilityandhealth/index.html">www.cdc.gov/disabilities/</a></li>
-    </ul>
-</footer>
-    </body>
+
+        <section>
+          <!--US Population with Disabilities-->
+          <div class="sectionWrap">
+            <h3>US Population with Disabilities</h3>
+
+            <ul id="usPopListSpacer">
+              <li>
+                26 percent (1 in 4) of adults in the United States have some
+                type of disability
+              </li>
+              <li>
+                The percentage of people living with disabilities is highest in
+                the South.
+              </li>
+            </ul>
+
+            <div id="usPop"></div>
+          </div>
+
+          <!--Percentage of adults with functional disability types-->
+          <div class="sectionWrap">
+            <h3>Percentage of adults with functional disability types</h3>
+            <ul>
+              <li>
+                13.7% of people with a disability have a mobility disability
+                with serious difficulty walking or climbing stairs.
+              </li>
+              <li>
+                10.8% of people with a disability have a cognition disability
+                with serious difficulty concentrating, remembering or making
+                decisions.
+              </li>
+              <li>
+                6.8% of people with a disability have an independent living
+                disability with difficulty doing errands alone.
+              </li>
+              <li>
+                5.9% of people with a disability are deaf or have serious
+                difficulty hearing
+              </li>
+              <li>
+                4.6% of people with a disability have a vision disability with
+                blindness or serious difficulty seeing even when wearing
+                glasses.
+              </li>
+              <li>
+                3.6 percent of people with a disability have a self-care
+                disability with difficulty dressing or bathing.
+              </li>
+            </ul>
+            <div id="perAdults"></div>
+          </div>
+
+          <!--Disability and Communities-->
+          <div class="sectionWrap">
+            <h3>Disability and Communities</h3>
+            <p>
+              Disability is especially common in these groups, older adults,
+              women and minorites.
+            </p>
+            <ul>
+              <li>2 in 5 adults age 65 years and older have a disability</li>
+              <li>1 in 4 women have a disability.</li>
+              <li>
+                2 in 5 non-Hispanic American Indians/ Alaska Natives have a
+                disability.
+              </li>
+            </ul>
+            <div class="threeRow">
+              <div id="olderAdults"></div>
+              <div id="womenAdults"></div>
+              <div id="minorityAdults"></div>
+            </div>
+          </div>
+
+          <!--Disability and Health-->
+          <div class="sectionWrap">
+            <h3>Disability and Health</h3>
+            <p>
+              Adults living with disabilities are more likely to be obese,
+              smoke, have heart disease and diabetes:
+            </p>
+            <ul>
+              <li>
+                38.2% of adults with a disability are obese while 26.2% of
+                adults without a disability are obese.
+              </li>
+              <li>
+                28.2% of adults with a disability smoke while 13.4% of adults
+                without a disability smoke.
+              </li>
+              <li>
+                11.5% of adults with a disability have heart disease while 3.8%
+                of adults without a disability have heart disease.
+              </li>
+              <li>
+                11.5% of adults with a disability have heart disease while 3.8%
+                of adults without a disability have heart disease.
+              </li>
+            </ul>
+            <div id="healthCompare"></div>
+          </div>
+
+          <!--Disability and Healthcare Access-->
+          <div class="sectionWrap">
+            <h3>Disability and Healthcare Access</h3>
+            <p>Health care access barriers for working-age adults include:</p>
+            <ul>
+              <li>
+                1 in 3 adults with disabilities 18 to 44 years do not have a
+                usual health care provider
+              </li>
+              <li>
+                1 in 3 adults with disabilities 18 to 44 years have an unmet
+                health care need because of cost in the past year
+              </li>
+              <li>
+                1 in 4 adults with disabilities 45 to 64 years did not have a
+                routine check-up in the past year
+              </li>
+            </ul>
+            <div class="threeRow">
+              <div id="usualProvider"></div>
+              <div id="unmetNeed"></div>
+              <div id="routineCheckup"></div>
+            </div>
+          </div>
+
+          <!--Making a Difference-->
+          <div class="sectionWrap">
+            <h3>Making a Difference</h3>
+            <p>Public health is for all of us.</p>
+            <p>
+              Join CDC and its partners as we work together to improve the
+              health of people living with disabilities. CDC and its partners
+              work together to improve the lives of people with disabilities by:
+            </p>
+            <ul>
+              <li>Promoting healthy living</li>
+              <li>Monitoring public health data</li>
+              <li>Researching and reducing health disparities</li>
+              <li>Building inclusive health programs</li>
+              <li>Improving access to health care</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <ul>
+        <li>
+          Data used from
+          <a
+            href="https://www.cdc.gov/ncbddd/disabilityandhealth/infographic-disability-impacts-all.html"
+            >Center for Disease Control (CDC) "Disability Impacts All of Us"</a
+          >
+        </li>
+        <li>
+          For more information go to
+          <a href="https://www.cdc.gov/ncbddd/disabilityandhealth/index.html"
+            >www.cdc.gov/disabilities/</a
+          >
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>

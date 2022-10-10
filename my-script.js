@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   
-  //load US Population Map
+// US Population with Disabilities
   // (function (){...})() is an iiffe, immediately invoked function expression
   (async () => {
 
@@ -286,6 +286,7 @@ const data = [
 
 })();
 
+// Percentage of adults with functional disability types
 const perAdults = Highcharts.chart('perAdults', {
   chart: {
       type: 'column'
@@ -330,6 +331,397 @@ const perAdults = Highcharts.chart('perAdults', {
       data: [13, 10.8, 6.8, 5.9, 4.6, 3.7]
   }]
 });
+
+
+// Disability and Communities
+const olderAdults = Highcharts.chart('olderAdults', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: 0,
+        plotShadow: false
+    },
+    title: {
+        text: 'Browser<br>shares<br>January<br>2022',
+        align: 'center',
+        verticalAlign: 'middle',
+        y: 60
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                distance: -50,
+                style: {
+                    fontWeight: 'bold',
+                    color: 'white'
+                }
+            },
+            startAngle: -90,
+            endAngle: 90,
+            center: ['50%', '75%'],
+            size: '110%'
+        }
+    },
+    series: [{
+        type: 'pie',
+        name: 'Browser share',
+        innerSize: '50%',
+        data: [
+            ['Chrome', 73.86],
+            ['Edge', 11.97],
+            {
+                name: 'Other',
+                y: 3.77,
+                dataLabels: {
+                    enabled: false
+                }
+            }
+        ]
+    }]
+});
+
+const womenAdults = Highcharts.chart('womenAdults', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: 0,
+        plotShadow: false
+    },
+    title: {
+        text: 'Browser<br>shares<br>January<br>2022',
+        align: 'center',
+        verticalAlign: 'middle',
+        y: 60
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                distance: -50,
+                style: {
+                    fontWeight: 'bold',
+                    color: 'white'
+                }
+            },
+            startAngle: -90,
+            endAngle: 90,
+            center: ['50%', '75%'],
+            size: '110%'
+        }
+    },
+    series: [{
+        type: 'pie',
+        name: 'Browser share',
+        innerSize: '50%',
+        data: [
+            ['Chrome', 73.86],
+            ['Edge', 11.97],
+            ['Firefox', 5.52],
+            ['Safari', 2.98],
+            ['Internet Explorer', 1.90],
+            {
+                name: 'Other',
+                y: 3.77,
+                dataLabels: {
+                    enabled: false
+                }
+            }
+        ]
+    }]
+});
+
+const minorityAdults = Highcharts.chart('minorityAdults', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: 0,
+        plotShadow: false
+    },
+    title: {
+        text: 'Browser<br>shares<br>January<br>2022',
+        align: 'center',
+        verticalAlign: 'middle',
+        y: 60
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                distance: -50,
+                style: {
+                    fontWeight: 'bold',
+                    color: 'white'
+                }
+            },
+            startAngle: -90,
+            endAngle: 90,
+            center: ['50%', '75%'],
+            size: '110%'
+        }
+    },
+    series: [{
+        type: 'pie',
+        name: 'Browser share',
+        innerSize: '50%',
+        data: [
+            ['Chrome', 73.86],
+            ['Edge', 11.97],
+            ['Firefox', 5.52],
+            ['Safari', 2.98],
+            ['Internet Explorer', 1.90],
+            {
+                name: 'Other',
+                y: 3.77,
+                dataLabels: {
+                    enabled: false
+                }
+            }
+        ]
+    }]
+});
+
+
+// Disability and Health
+const healthCompare = Highcharts.chart('healthCompare', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Percentage of adults with functional disability types'
+    },
+  
+    xAxis: {
+        categories: [
+            'Mobility',
+            'Cognition',
+            'Independent Living',
+            'Hearing',
+            'Vision',
+            'Self Care',
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        title: {
+            useHTML: true,
+            text: 'Percentage of adults'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: '2020',
+        data: [13, 10.8, 6.8, 5.9, 4.6, 3.7]
+    }]
+  });
+
+
+// Disability and Healthcare Access
+const usualProvider = Highcharts.chart('usualProvider', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: 0,
+        plotShadow: false
+    },
+    title: {
+        text: 'Browser<br>shares<br>January<br>2022',
+        align: 'center',
+        verticalAlign: 'middle',
+        y: 60
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                distance: -50,
+                style: {
+                    fontWeight: 'bold',
+                    color: 'white'
+                }
+            },
+            startAngle: -90,
+            endAngle: 90,
+            center: ['50%', '75%'],
+            size: '110%'
+        }
+    },
+    series: [{
+        type: 'pie',
+        name: 'Browser share',
+        innerSize: '50%',
+        data: [
+            ['Chrome', 73.86],
+            ['Edge', 11.97],
+            ['Firefox', 5.52],
+            ['Safari', 2.98],
+            ['Internet Explorer', 1.90],
+            {
+                name: 'Other',
+                y: 3.77,
+                dataLabels: {
+                    enabled: false
+                }
+            }
+        ]
+    }]
+});
+
+const unmetNeed = Highcharts.chart('unmetNeed', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: 0,
+        plotShadow: false
+    },
+    title: {
+        text: 'Browser<br>shares<br>January<br>2022',
+        align: 'center',
+        verticalAlign: 'middle',
+        y: 60
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                distance: -50,
+                style: {
+                    fontWeight: 'bold',
+                    color: 'white'
+                }
+            },
+            startAngle: -90,
+            endAngle: 90,
+            center: ['50%', '75%'],
+            size: '110%'
+        }
+    },
+    series: [{
+        type: 'pie',
+        name: 'Browser share',
+        innerSize: '50%',
+        data: [
+            ['Chrome', 73.86],
+            ['Edge', 11.97],
+            ['Firefox', 5.52],
+            ['Safari', 2.98],
+            ['Internet Explorer', 1.90],
+            {
+                name: 'Other',
+                y: 3.77,
+                dataLabels: {
+                    enabled: false
+                }
+            }
+        ]
+    }]
+});
+
+const routineCheckup = Highcharts.chart('routineCheckup', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: 0,
+        plotShadow: false
+    },
+    title: {
+        text: 'Browser<br>shares<br>January<br>2022',
+        align: 'center',
+        verticalAlign: 'middle',
+        y: 60
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                distance: -50,
+                style: {
+                    fontWeight: 'bold',
+                    color: 'white'
+                }
+            },
+            startAngle: -90,
+            endAngle: 90,
+            center: ['50%', '75%'],
+            size: '110%'
+        }
+    },
+    series: [{
+        type: 'pie',
+        name: 'Browser share',
+        innerSize: '50%',
+        data: [
+            ['Chrome', 73.86],
+            ['Edge', 11.97],
+            ['Firefox', 5.52],
+            ['Safari', 2.98],
+            ['Internet Explorer', 1.90],
+            {
+                name: 'Other',
+                y: 3.77,
+                dataLabels: {
+                    enabled: false
+                }
+            }
+        ]
+    }]
+});
+
 
 });
   
