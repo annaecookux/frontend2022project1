@@ -8,51 +8,49 @@ document.addEventListener('DOMContentLoaded', function () {
         'https://code.highcharts.com/mapdata/countries/us/us-all.topo.json'
     ).then(response => response.json());
 
-
-    // TO DO ==> Update all the values with the population for disability for each state
 const data = [
   {
-      "value": 438,
+      "value": 21,
       "code": "nj"
   },
   {
-      "value": 387.35,
+      "value": 23,
       "code": "ri"
   },
   {
-      "value": 312.68,
+      "value": 23,
       "code": "ma"
   },
   {
-      "value": 271.4,
+      "value": 21,
       "code": "ct"
   },
   {
-      "value": 209.23,
+      "value": 20,
       "code": "md"
   },
   {
-      "value": 195.18,
+      "value": 21,
       "code": "ny"
   },
   {
-      "value": 154.87,
+      "value": 24,
       "code": "de"
   },
   {
-      "value": 114.43,
+      "value": 26,
       "code": "fl"
   },
   {
-      "value": 107.05,
+      "value": 25,
       "code": "oh"
   },
   {
-      "value": 105.8,
+      "value": 26,
       "code": "pa"
   },
   {
-      "value": 86.27,
+      "value": 23,
       "code": "il"
   },
   {
@@ -227,7 +225,7 @@ const data = [
             },
 
             title: {
-                text: 'Disabilities by State'
+                text: 'Percentage of People with Disabilities by State '
             },
 
             exporting: {
@@ -337,14 +335,12 @@ const perAdults = Highcharts.chart('perAdults', {
 const olderAdults = Highcharts.chart('olderAdults', {
     chart: {
         plotBackgroundColor: null,
-        plotBorderWidth: 0,
-        plotShadow: false
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
     },
     title: {
-        text: 'Browser<br>shares<br>January<br>2022',
-        align: 'center',
-        verticalAlign: 'middle',
-        y: 60
+        text: '2 in 5 adults age 65 years and older have a disability'
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -356,49 +352,36 @@ const olderAdults = Highcharts.chart('olderAdults', {
     },
     plotOptions: {
         pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
             dataLabels: {
                 enabled: true,
-                distance: -50,
-                style: {
-                    fontWeight: 'bold',
-                    color: 'white'
-                }
-            },
-            startAngle: -90,
-            endAngle: 90,
-            center: ['50%', '75%'],
-            size: '110%'
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+            }
         }
     },
     series: [{
-        type: 'pie',
-        name: 'Browser share',
-        innerSize: '50%',
-        data: [
-            ['Chrome', 73.86],
-            ['Edge', 11.97],
-            {
-                name: 'Other',
-                y: 3.77,
-                dataLabels: {
-                    enabled: false
-                }
-            }
-        ]
+        name: 'Adults age 65 years and older',
+        colorByPoint: true,
+        data: [{
+            name: 'Have a disability',
+            y: 2,
+        }, {
+            name: 'Do not have a reported disability',
+            y: 3
+        }]
     }]
 });
 
 const womenAdults = Highcharts.chart('womenAdults', {
     chart: {
         plotBackgroundColor: null,
-        plotBorderWidth: 0,
-        plotShadow: false
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
     },
     title: {
-        text: 'Browser<br>shares<br>January<br>2022',
-        align: 'center',
-        verticalAlign: 'middle',
-        y: 60
+        text: '1 in 4 women have a disability.'
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -410,52 +393,36 @@ const womenAdults = Highcharts.chart('womenAdults', {
     },
     plotOptions: {
         pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
             dataLabels: {
                 enabled: true,
-                distance: -50,
-                style: {
-                    fontWeight: 'bold',
-                    color: 'white'
-                }
-            },
-            startAngle: -90,
-            endAngle: 90,
-            center: ['50%', '75%'],
-            size: '110%'
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+            }
         }
     },
     series: [{
-        type: 'pie',
-        name: 'Browser share',
-        innerSize: '50%',
-        data: [
-            ['Chrome', 73.86],
-            ['Edge', 11.97],
-            ['Firefox', 5.52],
-            ['Safari', 2.98],
-            ['Internet Explorer', 1.90],
-            {
-                name: 'Other',
-                y: 3.77,
-                dataLabels: {
-                    enabled: false
-                }
-            }
-        ]
+        name: 'Women',
+        colorByPoint: true,
+        data: [{
+            name: 'Have a disability',
+            y: 1,
+        }, {
+            name: 'Do not have a reported disability',
+            y: 4
+        }]
     }]
 });
 
 const minorityAdults = Highcharts.chart('minorityAdults', {
     chart: {
         plotBackgroundColor: null,
-        plotBorderWidth: 0,
-        plotShadow: false
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
     },
     title: {
-        text: 'Browser<br>shares<br>January<br>2022',
-        align: 'center',
-        verticalAlign: 'middle',
-        y: 60
+        text: '2 in 5 non-Hispanic American Indians/ Alaska Natives have a disability.'
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -467,38 +434,24 @@ const minorityAdults = Highcharts.chart('minorityAdults', {
     },
     plotOptions: {
         pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
             dataLabels: {
                 enabled: true,
-                distance: -50,
-                style: {
-                    fontWeight: 'bold',
-                    color: 'white'
-                }
-            },
-            startAngle: -90,
-            endAngle: 90,
-            center: ['50%', '75%'],
-            size: '110%'
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+            }
         }
     },
     series: [{
-        type: 'pie',
-        name: 'Browser share',
-        innerSize: '50%',
-        data: [
-            ['Chrome', 73.86],
-            ['Edge', 11.97],
-            ['Firefox', 5.52],
-            ['Safari', 2.98],
-            ['Internet Explorer', 1.90],
-            {
-                name: 'Other',
-                y: 3.77,
-                dataLabels: {
-                    enabled: false
-                }
-            }
-        ]
+        name: 'non-Hispanic American Indians/ Alaska Natives',
+        colorByPoint: true,
+        data: [{
+            name: 'Have a disability',
+            y: 2,
+        }, {
+            name: 'Do not have a reported disability',
+            y: 3
+        }]
     }]
 });
 
@@ -509,17 +462,15 @@ const healthCompare = Highcharts.chart('healthCompare', {
         type: 'column'
     },
     title: {
-        text: 'Percentage of adults with functional disability types'
+        text: 'Adults living with disabilities are more likely to...'
     },
   
     xAxis: {
         categories: [
-            'Mobility',
-            'Cognition',
-            'Independent Living',
-            'Hearing',
-            'Vision',
-            'Self Care',
+            'Have Obesity',
+            'Smoke',
+            'Have Heart Disease',
+            'Have Diabetes',
         ],
         crosshair: true
     },
@@ -544,24 +495,27 @@ const healthCompare = Highcharts.chart('healthCompare', {
         }
     },
     series: [{
-        name: '2020',
-        data: [13, 10.8, 6.8, 5.9, 4.6, 3.7]
+        name: 'With Disabilities',
+        data: [38.2, 28.2, 11.5, 16.3]
+
+    }, {
+        name: 'Without Disabilities',
+        data: [26.2, 13.4, 3.8, 7.2]
+
     }]
   });
 
 
 // Disability and Healthcare Access
 const usualProvider = Highcharts.chart('usualProvider', {
-    chart: {
+        chart: {
         plotBackgroundColor: null,
-        plotBorderWidth: 0,
-        plotShadow: false
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
     },
     title: {
-        text: 'Browser<br>shares<br>January<br>2022',
-        align: 'center',
-        verticalAlign: 'middle',
-        y: 60
+        text: '1 in 3 adults with disabilities 18 to 44 years do not have a usual health care provider'
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -573,52 +527,36 @@ const usualProvider = Highcharts.chart('usualProvider', {
     },
     plotOptions: {
         pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
             dataLabels: {
                 enabled: true,
-                distance: -50,
-                style: {
-                    fontWeight: 'bold',
-                    color: 'white'
-                }
-            },
-            startAngle: -90,
-            endAngle: 90,
-            center: ['50%', '75%'],
-            size: '110%'
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+            }
         }
     },
     series: [{
-        type: 'pie',
-        name: 'Browser share',
-        innerSize: '50%',
-        data: [
-            ['Chrome', 73.86],
-            ['Edge', 11.97],
-            ['Firefox', 5.52],
-            ['Safari', 2.98],
-            ['Internet Explorer', 1.90],
-            {
-                name: 'Other',
-                y: 3.77,
-                dataLabels: {
-                    enabled: false
-                }
-            }
-        ]
+        name: 'Adults with disabilities 18 to 44 years old',
+        colorByPoint: true,
+        data: [{
+            name: 'Do not have a usual health care provider',
+            y: 1,
+        }, {
+            name: 'Do have a usual health care provider',
+            y: 2
+        }]
     }]
 });
 
 const unmetNeed = Highcharts.chart('unmetNeed', {
-    chart: {
+        chart: {
         plotBackgroundColor: null,
-        plotBorderWidth: 0,
-        plotShadow: false
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
     },
     title: {
-        text: 'Browser<br>shares<br>January<br>2022',
-        align: 'center',
-        verticalAlign: 'middle',
-        y: 60
+        text: '1 in 3 adults with disabilities 18 to 44 years have an unmet health care need because of cost in the past year'
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -630,52 +568,36 @@ const unmetNeed = Highcharts.chart('unmetNeed', {
     },
     plotOptions: {
         pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
             dataLabels: {
                 enabled: true,
-                distance: -50,
-                style: {
-                    fontWeight: 'bold',
-                    color: 'white'
-                }
-            },
-            startAngle: -90,
-            endAngle: 90,
-            center: ['50%', '75%'],
-            size: '110%'
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+            }
         }
     },
     series: [{
-        type: 'pie',
-        name: 'Browser share',
-        innerSize: '50%',
-        data: [
-            ['Chrome', 73.86],
-            ['Edge', 11.97],
-            ['Firefox', 5.52],
-            ['Safari', 2.98],
-            ['Internet Explorer', 1.90],
-            {
-                name: 'Other',
-                y: 3.77,
-                dataLabels: {
-                    enabled: false
-                }
-            }
-        ]
+        name: 'Adults with disabilities 18 to 44 years old',
+        colorByPoint: true,
+        data: [{
+            name: 'Have an unmet health care need',
+            y: 1,
+        }, {
+            name: 'Do not have an unmet health care need',
+            y: 2
+        }]
     }]
 });
 
 const routineCheckup = Highcharts.chart('routineCheckup', {
-    chart: {
+        chart: {
         plotBackgroundColor: null,
-        plotBorderWidth: 0,
-        plotShadow: false
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
     },
     title: {
-        text: 'Browser<br>shares<br>January<br>2022',
-        align: 'center',
-        verticalAlign: 'middle',
-        y: 60
+        text: '1 in 4 adults with disabilities 45 to 64 years did not have a routine check-up in the past year'
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -687,38 +609,24 @@ const routineCheckup = Highcharts.chart('routineCheckup', {
     },
     plotOptions: {
         pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
             dataLabels: {
                 enabled: true,
-                distance: -50,
-                style: {
-                    fontWeight: 'bold',
-                    color: 'white'
-                }
-            },
-            startAngle: -90,
-            endAngle: 90,
-            center: ['50%', '75%'],
-            size: '110%'
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+            }
         }
     },
     series: [{
-        type: 'pie',
-        name: 'Browser share',
-        innerSize: '50%',
-        data: [
-            ['Chrome', 73.86],
-            ['Edge', 11.97],
-            ['Firefox', 5.52],
-            ['Safari', 2.98],
-            ['Internet Explorer', 1.90],
-            {
-                name: 'Other',
-                y: 3.77,
-                dataLabels: {
-                    enabled: false
-                }
-            }
-        ]
+        name: 'Adults with disabilities 45 to 64 years old',
+        colorByPoint: true,
+        data: [{
+            name: 'Did not have a routine check-up in the past year',
+            y: 1,
+        }, {
+            name: 'Did have a routine check-up in the past year',
+            y: 3,
+        }]
     }]
 });
 
