@@ -187,6 +187,11 @@ footer li {
 
   /* Less than 375px */
   @media all and (max-width: 375px) {
+
+  h1 {
+   font-size: 2rem;
+  }
+  
     main {
       padding: 2.75rem 2rem;
       margin: 3rem 0 3rem 0;

@@ -54,159 +54,159 @@ const data = [
       "code": "il"
   },
   {
-      "value": 83.85,
+      "value": 23,
       "code": "ca"
   },
   {
-      "value": 72.83,
+      "value": 19,
       "code": "hi"
   },
   {
-      "value": 69.03,
+      "value": 22,
       "code": "va"
   },
   {
-      "value": 67.55,
+      "value": 26,
       "code": "mi"
   },
   {
-      "value": 65.46,
+      "value": 27,
       "code": "in"
   },
   {
-      "value": 63.8,
+      "value": 26,
       "code": "nc"
   },
   {
-      "value": 54.59,
+      "value": 25,
       "code": "ga"
   },
   {
-      "value": 53.29,
+      "value": 29,
       "code": "tn"
   },
   {
-      "value": 53.2,
+      "value": 21,
       "code": "nh"
   },
   {
-      "value": 51.45,
+      "value": 31,
       "code": "sc"
   },
   {
-      "value": 39.61,
+      "value": 33,
       "code": "la"
   },
   {
-      "value": 39.28,
+      "value": 33,
       "code": "ky"
   },
   {
-      "value": 38.13,
+      "value": 21,
       "code": "wi"
   },
   {
-      "value": 34.2,
+      "value": 22,
       "code": "wa"
   },
   {
-      "value": 33.84,
+      "value": 31,
       "code": "al"
   },
   {
-      "value": 31.36,
+      "value": 28,
       "code": "mo"
   },
   {
-      "value": 30.75,
+      "value": 26,
       "code": "tx"
   },
   {
-      "value": 29,
+      "value": 32,
       "code": "wv"
   },
   {
-      "value": 25.41,
+      "value": 21,
       "code": "vt"
   },
   {
-      "value": 23.86,
+      "value": 20,
       "code": "mn"
   },
   {
-      "value": 23.42,
+      "value": 33,
       "code": "ms"
   },
   {
-      "value": 20.22,
+      "value": 22,
       "code": "ia"
   },
   {
-      "value": 19.82,
+      "value": 31,
       "code": "ar"
   },
   {
-      "value": 19.4,
+      "value": 33,
       "code": "ok"
   },
   {
-      "value": 17.43,
+      "value": 24,
       "code": "az"
   },
   {
-      "value": 16.01,
+      "value": 20,
       "code": "co"
   },
   {
-      "value": 15.95,
+      "value": 27,
       "code": "me"
   },
   {
-      "value": 13.76,
+      "value": 26,
       "code": "or"
   },
   {
-      "value": 12.69,
+      "value": 26,
       "code": "ks"
   },
   {
-      "value": 10.5,
+      "value": 23,
       "code": "ut"
   },
   {
-      "value": 8.6,
+      "value": 20,
       "code": "ne"
   },
   {
-      "value": 7.03,
+      "value": 28,
       "code": "nv"
   },
   {
-      "value": 6.04,
+      "value": 28,
       "code": "id"
   },
   {
-      "value": 5.79,
+      "value": 26,
       "code": "nm"
   },
   {
-      "value": 3.84,
+      "value": 23,
       "code": "sd"
   },
   {
-      "value": 3.59,
+      "value": 24,
       "code": "nd"
   },
   {
-      "value": 2.39,
+      "value": 26,
       "code": "mt"
   },
   {
-      "value": 1.96,
+      "value": 24,
       "code": "wy"
   },
   {
-      "value": 0.42,
+      "value": 21,
       "code": "ak"
   }
 ]
@@ -239,7 +239,7 @@ const data = [
                 backgroundColor: 'rgba(255,255,255,0.85)',
                 floating: true,
                 verticalAlign: 'top',
-                y: 25
+                y: 25,
             },
 
             mapNavigation: {
